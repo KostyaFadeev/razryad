@@ -1,8 +1,12 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + NextUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Razryad",
+  description:
+    "Razryad — ваш надежный партнер в мире кабелей. Мы предлагаем широкий ассортимент высококачественных кабелей и " +
+    "аксессуаров для мобильных устройств, ноутбуков и компьютеров. Наша продукция сочетает в себе надежность, " +
+    "долговечность и современные технологии, что обеспечивает идеальную связь и зарядку ваших устройств. " +
+    "Мы стремимся удовлетворить потребности каждого клиента, предлагая доступные цены и отличное качество.",
   navItems: [
     {
       label: "О нас",
@@ -20,39 +24,23 @@ export const siteConfig = {
       label: "Обратная связь",
       href: "/support",
     },
+    {
+      label: "Полезные статьи",
+      href: "/doc",
+    },
   ],
   navMenuItems: [
     {
-      label: "Profile",
-      href: "/profile",
+      label: "О нас",
+      href: "/about",
     },
     {
-      label: "Dashboard",
-      href: "/dashboard",
+      label: "Гарантия",
+      href: "/warranty",
     },
     {
-      label: "Projects",
-      href: "/projects",
-    },
-    {
-      label: "Team",
-      href: "/team",
-    },
-    {
-      label: "Calendar",
-      href: "/calendar",
-    },
-    {
-      label: "Settings",
-      href: "/settings",
-    },
-    {
-      label: "Help & Feedback",
-      href: "/help-feedback",
-    },
-    {
-      label: "Logout",
-      href: "/logout",
+      label: "Обратная связь",
+      href: "/support",
     },
   ],
   links: {
