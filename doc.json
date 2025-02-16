@@ -1,0 +1,16 @@
+[
+  {
+    "id": "1",
+    "title": "О стандартах USB",
+    "subTitle": "Давайте разбираться в стандартах",
+    "description": "Время чтения от 3 до 5 минут",
+    "image": "https://avatars.mds.yandex.net/i?id=a0dc7721925da544acbcc48b14be5581_l-5221549-images-thumbs&n=13"
+  },
+  {
+    "id": "2",
+    "title": "Подробно о Thunderbolt 3 и о Thunderbolt 4",
+    "subTitle": "Кто такой этот ваш thunderbolt",
+    "description": "Время чтения от 3 до 5 минут",
+    "image": "https://stihi.ru/pics/2018/05/04/9221.jpg"
+  }
+]

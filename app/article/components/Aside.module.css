@@ -1,0 +1,47 @@
+/* Aside.module.css */
+.asideDesktop {
+  padding: 1rem;
+  overflow: auto;
+  width: 100%;
+  max-width: 100%;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.asideDesktop :global(.ant-anchor-link-title) {
+  font-size: 0.85rem;
+  white-space: normal;
+}
+
+.asideDesktop :global(.ant-anchor-wrapper) {
+  max-height: calc(100vh - 16px) !important;
+  overflow-y: auto;
+}
+
+.asideDesktop :global(.ant-anchor-link) {
+  min-width: auto;
+  padding: 0.5rem 0;
+  margin: 0;
+}
+
+/* Скрываем Aside на мобильных устройствах */
+@media (max-width: 767px) {
+  .asideDesktop {
+    display: none;
+  }
+}
+
+/* Медиа-запрос для настольных устройств */
+@media (min-width: 768px) {
+  .asideDesktop {
+    padding: 1rem 0 1rem 2rem;
+    max-width: 350px;
+    display: block; /* Показываем Aside на настольных устройствах */
+  }
+  
+  .asideDesktop :global(.ant-anchor-link) {
+    min-width: 146px;
+    margin: 0 1rem;
+  }
+}

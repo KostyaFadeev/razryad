@@ -23,6 +23,8 @@
 		"@nextui-org/theme": "2.2.11",
 		"@react-aria/ssr": "3.9.4",
 		"@react-aria/visually-hidden": "3.8.12",
+		"@uiw/react-md-editor": "^4.0.5",
+		"antd": "^5.24.0",
 		"clsx": "2.1.1",
 		"framer-motion": "^12.4.3",
 		"intl-messageformat": "^10.5.0",
