@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@nextui-org/link";
 import clsx from "clsx";
+import Head from "next/head"; // Импортируйте Head
 
 import { Providers } from "./providers";
 
@@ -38,7 +39,11 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head />
+      <head>
+        <Head>
+          <meta name="yandex-verification" content="b0087c71c1d44566" />
+        </Head>
+      </head>
       <body
         className={clsx(
           "min-h-screen bg-background font-sans antialiased",
