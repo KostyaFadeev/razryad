@@ -1,0 +1,52 @@
+[
+  {
+    "type": "footer",
+    "title": "Кабель USB Type-C",
+    "subtitle": "Поддержка Thunderbolt 3/4",
+    "image": {
+      "src": "/img/products/KVTHUNDER4new/KVTHUNDER4new_1.jpg",
+      "alt": "Кабель USB Type-C",
+      "className": "object-contain"
+    },
+    "className": "col-span-12 sm:col-span-4 h-[300px]",
+    "isFooterBlurred": true,
+    "footer": {
+      "type": "features",
+      "features": [
+        "Сверхбыстрая зарядка",
+        "Прочная оплетка"
+      ],
+      "link": {
+        "href": "/product?id=KVTHUNDER4new",
+        "label": "Подробнее"
+      },
+      "bgClass": "bg-white/30",
+      "borderClass": "border-t-1 border-zinc-100/50"
+    }
+  },
+  {
+    "type": "footer",
+    "title": "Кабель USB Type-C",
+    "subtitle": "Поддержка Thunderbolt 3/4",
+    "image": {
+      "src": "/img/products/KVUSB4CH3/KVUSB4CH3_1.jpg",
+      "alt": "Кабель USB Type-C",
+      "className": "object-contain"
+    },
+    "className": "col-span-12 sm:col-span-4 h-[300px]",
+    "isFooterBlurred": true,
+    "footer": {
+      "type": "features",
+      "features": [
+        "Сверхбыстрая зарядка",
+        "Прочная оплетка"
+      ],
+      "link": {
+        "href": "/product?id=KVUSB4CH3",
+        "label": "Подробнее"
+      },
+      "bgClass": "bg-white/30",
+      "borderClass": "border-t-1 border-zinc-100/50"
+    }
+  }
+]

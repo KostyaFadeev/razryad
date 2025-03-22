@@ -1,23 +1,21 @@
 import fs from "fs";
 import path from "path";
 
-export async function GET(req, { params }) {
-  const { id } = params;
-  const filePath = path.join(process.cwd(), "article", `${id}.json`);
+export async function GET() {
+  const filePath = path.join(process.cwd(), "data/preview-cards.json");
 
   if (!fs.existsSync(filePath)) {
-    return new Response(JSON.stringify({ error: "Статья не найдена" }), {
+    return new Response(JSON.stringify({ error: "Файл не найден" }), {
       status: 404,
       headers: { "Content-Type": "application/json" },
     });
   }
 
   try {
-    // Читаем файл
     const jsonData = fs.readFileSync(filePath, "utf8");
-    const article = JSON.parse(jsonData);
+    const cards = JSON.parse(jsonData);
 
-    return new Response(JSON.stringify(article), {
+    return new Response(JSON.stringify(cards), {
       status: 200,
       headers: {
         "Content-Type": "application/json",

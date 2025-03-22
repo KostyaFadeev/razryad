@@ -3,17 +3,16 @@ import path from "path";
 
 export async function GET(req, { params }) {
   const { id } = params;
-  const filePath = path.join(process.cwd(), "article", `${id}.json`);
+  const filePath = path.join(process.cwd(), "product", `${id}.json`);
 
   if (!fs.existsSync(filePath)) {
-    return new Response(JSON.stringify({ error: "Статья не найдена" }), {
+    return new Response(JSON.stringify({ error: "Товар не найден" }), {
       status: 404,
       headers: { "Content-Type": "application/json" },
     });
   }
 
   try {
-    // Читаем файл
     const jsonData = fs.readFileSync(filePath, "utf8");
     const article = JSON.parse(jsonData);
 

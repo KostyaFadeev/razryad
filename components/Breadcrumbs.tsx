@@ -1,6 +1,6 @@
 import { Breadcrumbs, BreadcrumbItem } from "@nextui-org/react";
 import Link from "next/link";
-import React from "react"; //Import React
+import React from "react";
 
 interface Crumb {
   title: string;
