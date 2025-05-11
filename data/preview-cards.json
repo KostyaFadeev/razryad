@@ -4,7 +4,7 @@
     "title": "Кабель USB Type-C",
     "subtitle": "Поддержка Thunderbolt 3/4",
     "image": {
-      "src": "/img/products/KVTHUNDER4new/KVTHUNDER4new_1.jpg",
+      "src": "/img/products/KVTHUNDER4new/KVTHUNDER4new.jpg",
       "alt": "Кабель USB Type-C",
       "className": "object-contain"
     },
@@ -29,7 +29,7 @@
     "title": "Кабель USB Type-C",
     "subtitle": "Поддержка Thunderbolt 3/4",
     "image": {
-      "src": "/img/products/KVUSB4CH3/KVUSB4CH3_1.jpg",
+      "src": "/img/products/KVUSB4CH3/KVUSB4CH3.jpg",
       "alt": "Кабель USB Type-C",
       "className": "object-contain"
     },
@@ -43,6 +43,56 @@
       ],
       "link": {
         "href": "/product?id=KVUSB4CH3",
+        "label": "Подробнее"
+      },
+      "bgClass": "bg-white/30",
+      "borderClass": "border-t-1 border-zinc-100/50"
+    }
+  },
+  {
+    "type": "footer",
+    "title": "Кабель Display Port Type-C",
+    "subtitle": "Поддержка Thunderbolt 3",
+    "image": {
+      "src": "/img/products/KVTHUND3/KVTHUND3.jpg",
+      "alt": "Кабель USB Type-C",
+      "className": "object-contain"
+    },
+    "className": "col-span-12 sm:col-span-4 h-[300px]",
+    "isFooterBlurred": true,
+    "footer": {
+      "type": "features",
+      "features": [
+        "Передача аудио и видео сигнала",
+        "Возможность быстрой зарядки"
+      ],
+      "link": {
+        "href": "/product?id=KVTHUND3",
+        "label": "Подробнее"
+      },
+      "bgClass": "bg-white/30",
+      "borderClass": "border-t-1 border-zinc-100/50"
+    }
+  },
+  {
+    "type": "footer",
+    "title": "Кабель USB Type-C с Индикацией",
+    "subtitle": "Поддержка Thunderbolt 3/4 с Индикацией",
+    "image": {
+      "src": "/img/products/KVUSB4CH31IND/KVUSB4CH31IND.jpg",
+      "alt": "Кабель USB Type-C",
+      "className": "object-contain"
+    },
+    "className": "col-span-12 sm:col-span-4 h-[300px]",
+    "isFooterBlurred": true,
+    "footer": {
+      "type": "features",
+      "features": [
+        "Сверхбыстрая зарядка",
+        "Экран индикации"
+      ],
+      "link": {
+        "href": "/product?id=KVUSB4CH31IND",
         "label": "Подробнее"
       },
       "bgClass": "bg-white/30",

@@ -80,7 +80,7 @@ export default function HeroSection() {
           </svg>
         </div>
       </section>
-      <section ref={usb4SectionRef} id="Usb4Section" className="h-screen py-10">
+      <section ref={usb4SectionRef} id="Usb4Section" className=" py-10">
         <Usb4Section />
       </section>
     </>

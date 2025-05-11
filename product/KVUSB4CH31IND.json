@@ -1,17 +1,17 @@
 {
-  "id": "KVUSB4CH3",
+  "id": "KVUSB4CH31IND",
   "breadcrumbs": [
     {
       "title": "Главная",
       "link": "/"
     },
     {
-      "title": "Кабель Thunderbolt 4/3 USB4",
+      "title": "Кабель Thunderbolt 4/3 USB4 с индикацией",
       "link": "/product"
     }
   ],
-  "title": "Кабель Thunderbolt 4/3 USB4",
-  "imageUrl": "/img/products/KVUSB4CH3/KVUSB4CH3_11.jpg",
+  "title": "Кабель Thunderbolt 4/3 USB4 с индикацией",
+  "imageUrl": "/img/products/KVUSB4CH31IND/KVUSB4CH31IND.jpg",
   "imageUrls": [
     "/img/products/KVUSB4CH3/KVUSB4CH3_17.jpg",
     "/img/products/KVUSB4CH3/KVUSB4CH3_13.jpg",
@@ -25,7 +25,7 @@
     },
     {
       "link": "https://www.ozon.ru/product/kabel-thunderbolt-4-3-usb4-type-c-1-metr-pd-240w-video-8k60hz-40gb-s-5a-bystraya-zaryadka-1718122776/",
-       "name": "1 метр"
+      "name": "1 метр"
     },
     {
       "link": "https://www.ozon.ru/product/kabel-thunderbolt-4-3-usb4-type-c-pd-240w-video-8k60hz-40gb-s-5a-bystraya-zaryadka-mobilnoy-1367398951/",
@@ -91,6 +91,21 @@
         "Сверхбыстрая зарядка",
         "Прочная оплетка"
       ]
+    },
+    {
+      "id": "KVUSB4CH3",
+      "title": "Кабель USB4",
+      "subTitle": "Поддержка Thunderbolt 3/4",
+      "image": "/img/products/KVUSB4CH3/KVUSB4CH3_1.jpg",
+      "features": [
+        "Сверхбыстрая зарядка",
+        "Прочная оплетка"
+      ]
+    },
+    {
+      "id": "KVTHUND3",
+      "title": "Кабель Display Port Type-C",
+      "image": "/img/products/KVTHUND3/KVTHUND3.jpg"
     }
   ]
 }

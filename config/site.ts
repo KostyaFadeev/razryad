@@ -9,10 +9,6 @@ export const siteConfig = {
     "Мы стремимся удовлетворить потребности каждого клиента, предлагая доступные цены и отличное качество.",
   navItems: [
     {
-      label: "О нас",
-      href: "/about",
-    },
-    {
       label: "Акции",
       href: "/stocks",
     },
@@ -28,12 +24,12 @@ export const siteConfig = {
       label: "Полезные статьи",
       href: "/doc",
     },
-  ],
-  navMenuItems: [
     {
       label: "О нас",
       href: "/about",
     },
+  ],
+  navMenuItems: [
     {
       label: "Гарантия",
       href: "/warranty",
@@ -41,6 +37,10 @@ export const siteConfig = {
     {
       label: "Обратная связь",
       href: "/support",
+    },
+    {
+      label: "О нас",
+      href: "/about",
     },
   ],
   links: {

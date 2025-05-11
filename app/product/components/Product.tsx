@@ -64,39 +64,44 @@ const Product = () => {
         <div>
           <BreadcrumbsComponent crumbs={product.breadcrumbs} />
 
-          <div className="mb-10 flex flex-col md:flex-row gap-8 md:gap-12 items-start">
-            {/* Изображение товара */}
-            <Image
-              alt={product.title}
-              src={product.imageUrl}
-              width={500}
-              className="rounded-lg shadow-lg"
-            />
+          <div className="flex flex-col gap-4 md:flex-row md:items-start md:gap-12 mb-16">
+            {/* Блок изображения */}
+            <div className="w-full">
+              <Image
+                alt={product.title}
+                src={product.imageUrl}
+                width={500}
+                className="w-full h-auto rounded-xl shadow-xl object-cover"
+              />
+            </div>
 
-            {/* Описание товара */}
-            <div className="flex flex-col gap-6">
-              <h1 className="text-2xl lg:text-4xl font-extrabold">
+            {/* Блок описания */}
+            <div className="flex flex-col gap-8 w-auto">
+              {/* Заголовок */}
+              <h1 className="text-3xl sm:text-4xl font-extrabold leading-tight text-gray-900">
                 {product.title}
               </h1>
 
-              {/* Селектор размера и цена */}
-              <div className="flex flex-col items-center md:flex-row gap-6">
+              {/* Селектор размера и ссылки на магазины */}
+              <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
                 {/* Селектор размера */}
-                <Select
-                  className="max-w-xs"
-                  label="Размер"
-                  placeholder="Выберите размер"
-                  onChange={(e) =>
-                    setSelectedSize(product.sizes[Number(e.target.value)])
-                  }
-                >
-                  {product.sizes.map((size, index) => (
-                    <SelectItem key={index}>{size?.name}</SelectItem>
-                  ))}
-                </Select>
+                <div className="w-full sm:w-1/2">
+                  <Select
+                    className="max-w-full"
+                    label="Размер"
+                    placeholder="Выберите размер"
+                    onChange={(e) =>
+                      setSelectedSize(product.sizes[Number(e.target.value)])
+                    }
+                  >
+                    {product.sizes.map((size, index) => (
+                      <SelectItem key={index}>{size?.name}</SelectItem>
+                    ))}
+                  </Select>
+                </div>
 
-                {/* Кнопки ссылок на магазины */}
-                <div className="flex flex-wrap gap-4">
+                {/* Кнопки магазинов */}
+                <div className="flex flex-wrap gap-3 w-full sm:w-1/2">
                   {product.storeLinks.map((store, index) => (
                     <Button
                       key={index}
@@ -105,35 +110,36 @@ const Product = () => {
                       target="_blank"
                       as="a"
                       href={selectedSize?.link}
+                      className="w-full sm:w-auto"
                     >
                       {store.name}
                     </Button>
                   ))}
                 </div>
               </div>
+
+              {/* Детальная информация */}
+              <div className="bg-gray-50 rounded-xl shadow-md p-6 sm:p-8 max-w-full">
+                <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 border-b border-gray-300 pb-2">
+                  Детальная информация
+                </h2>
+                <ScrollShadow className="max-h-[350px] overflow-y-auto rounded-lg bg-white p-4 shadow-inner">
+                  <div className="text-gray-700 text-base sm:text-lg leading-relaxed space-y-4">
+                    {product.details.map((detail, index) => (
+                      <p key={index}>
+                        <span className="font-semibold text-gray-900">
+                          {detail.title}:
+                        </span>{" "}
+                        {detail.description}
+                      </p>
+                    ))}
+                  </div>
+                </ScrollShadow>
+              </div>
             </div>
           </div>
 
           <div className="container mx-auto py-10">
-            {/* Блок "Детальная информация" */}
-            <div className="mb-12 bg-gray-50 p-8 rounded-xl shadow-xl">
-              <h2 className="text-3xl font-bold text-gray-800 mb-6 border-b-2 border-gray-300 pb-3 text-left">
-                Детальная информация
-              </h2>
-              <ScrollShadow className="h-[350px] overflow-y-auto rounded-lg p-4 bg-white shadow-md">
-                <div className="text-gray-700 text-lg leading-8 space-y-6 text-left">
-                  {product.details.map((detail, index) => (
-                    <p key={index}>
-                      <span className="font-semibold text-gray-900">
-                        {detail.title}:
-                      </span>{" "}
-                      {detail.description}
-                    </p>
-                  ))}
-                </div>
-              </ScrollShadow>
-            </div>
-
             {/* Секция "Видеообзор" */}
             {product.videoUrl && (
               <div className="flex flex-wrap gap-8">

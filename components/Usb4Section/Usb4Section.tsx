@@ -53,7 +53,7 @@ export default function Usb4Section() {
 
   return (
     <section>
-      <div className="gap-4 grid grid-cols-12 grid-rows-2 px-8">
+      <div className="flex flex-wrap gap-4">
         {cards?.length > 0 &&
           cards?.map((card: CardType, index: number) => (
             <DynamicCard key={index} card={card} />
@@ -63,19 +63,60 @@ export default function Usb4Section() {
   );
 }
 
-function DynamicCard({ card }: { card: any }) {
+type CardType = {
+  className?: string;
+  isFooterBlurred?: boolean;
+  subtitle?: string;
+  title: string;
+  titleColor?: string;
+  titleSize?: string;
+  image: {
+    src: string;
+    alt: string;
+    className?: string;
+  };
+  footer?: {
+    type: "features" | "appCard";
+    bgClass?: string;
+    borderClass?: string;
+    features?: string[];
+    link?: {
+      href: string;
+      label: string;
+    };
+    appIcon?: {
+      src: string;
+      alt: string;
+    };
+    appInfo?: {
+      main: string;
+      sub: string;
+    };
+    button?: {
+      label: string;
+      radius: any;
+      size: any;
+    };
+  };
+};
+
+export function DynamicCard({ card }: { card: CardType }) {
   return (
     <Card
-      className={`${card.className} ${card.isFooterBlurred ? "is-footer-blurred" : ""}`}
+      isFooterBlurred={card.isFooterBlurred}
+      className={`relative overflow-hidden rounded-xl shadow-lg ${card.className || ""}`}
+      style={{ width: "360px", height: "480px" }}
     >
-      <CardHeader className="absolute z-10 top-1 flex-col items-start">
-        <p className="text-tiny text-white/60 uppercase font-bold">
-          {card.subtitle}
-        </p>
+      <CardHeader className="absolute z-10 top-0 left-0 flex-col items-start bg-black/40 p-4 w-full">
+        {card.subtitle && (
+          <p className="text-tiny text-white/60 uppercase font-bold">
+            {card.subtitle}
+          </p>
+        )}
         <h4
-          className={`text-${card.titleColor || "white"} font-medium ${
-            card.titleSize || "text-large"
-          }`}
+          className={`${
+            card.titleSize || "text-lg"
+          } font-semibold text-${card.titleColor || "white"}`}
         >
           {card.title}
         </h4>
@@ -83,93 +124,72 @@ function DynamicCard({ card }: { card: any }) {
 
       <Image
         removeWrapper
-        alt={card.image.alt}
-        className={`w-full h-full object-cover ${card.image.className}`}
         src={card.image.src}
+        alt={card.image.alt}
+        className={`object-cover w-full h-full ${card.image.className || ""}`}
+        radius="none"
       />
 
       {card.footer && (
         <CardFooter
-          className={`absolute bottom-0 z-10 ${card.footer.bgClass || ""} ${
-            card.footer.borderClass || ""
-          }`}
+          className={`absolute bottom-0 z-10 p-4 w-full flex-col justify-end bg-black/40 backdrop-blur-md ${
+            card.footer.bgClass || ""
+          } ${card.footer.borderClass || ""}`}
         >
           {card.footer.type === "features" && (
-            <div className="flex justify-between w-full">
-              <div>
-                {card.footer.features?.map((feature: string, index: number) => (
-                  <p key={index} className="text-black text-tiny">
-                    {feature}
-                  </p>
+            <div className="flex justify-between items-center w-full">
+              <div className="text-white space-y-1 text-tiny">
+                {card.footer.features?.map((feature, idx) => (
+                  <p key={idx}>{feature}</p>
                 ))}
               </div>
               {card.footer.link && (
                 <Link
+                  href={card.footer.link.href}
                   className={buttonStyles({
                     color: "primary",
                     radius: "full",
                     variant: "shadow",
                   })}
-                  href={card.footer.link.href}
                 >
                   {card.footer.link.label}
                 </Link>
               )}
             </div>
           )}
+
           {card.footer.type === "appCard" && (
             <div className="flex items-center justify-between w-full">
-              <div className="flex items-center gap-2">
-                <Image
-                  alt={card.footer.appIcon.alt}
-                  className="rounded-full w-10 h-11 bg-black"
-                  src={card.footer.appIcon.src}
-                />
+              <div className="flex items-center gap-3">
+                {card.footer.appIcon && (
+                  <Image
+                    src={card.footer.appIcon.src}
+                    alt={card.footer.appIcon.alt}
+                    className="rounded-full w-10 h-10"
+                  />
+                )}
                 <div>
-                  <p className="text-tiny text-white/60">
-                    {card.footer.appInfo.main}
+                  <p className="text-tiny text-white/70">
+                    {card.footer.appInfo?.main}
                   </p>
-                  <p className="text-tiny text-white/60">
-                    {card.footer.appInfo.sub}
+                  <p className="text-tiny text-white/50">
+                    {card.footer.appInfo?.sub}
                   </p>
                 </div>
               </div>
-              <Button
-                radius={card.footer.button.radius}
-                size={card.footer.button.size}
-              >
-                {card.footer.button.label}
-              </Button>
+              {card.footer.button && (
+                <Button
+                  radius={card.footer.button.radius}
+                  size={card.footer.button.size}
+                  className="text-sm"
+                >
+                  {card.footer.button.label}
+                </Button>
+              )}
             </div>
           )}
         </CardFooter>
       )}
     </Card>
   );
-}
-
-interface CardType {
-  breadcrumbs: Array<{
-    title: string;
-    link: string;
-  }>;
-  type: string;
-  title: string;
-  subTitle: string;
-  image: {
-    src: string;
-    alt: string;
-    className: string;
-  };
-  className: string;
-  isFooterBlurred: boolean;
-  footer: {
-    type: string;
-    bgClass: string;
-    borderClass: string;
-    features?: string[];
-    link?: {
-      href: string;
-    };
-  };
 }
