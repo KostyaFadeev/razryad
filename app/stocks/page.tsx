@@ -49,7 +49,7 @@ export default function StocksPage() {
 
         <div className="flex flex-col sm:flex-row gap-6 items-start sm:items-center">
           <div className="bg-indigo-100 text-indigo-800 border-2 border-indigo-700 rounded-xl px-6 py-4 text-center text-xl font-bold tracking-wide">
-            PODAROCHEK25
+            PODAROCHEK
           </div>
           <Link
             isExternal

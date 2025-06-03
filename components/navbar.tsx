@@ -14,7 +14,7 @@ import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { TelegramIcon } from "@/components/icons";
+import { TelegramIcon, VkIcon } from "@/components/icons";
 
 export const Navbar = () => {
   return (
@@ -48,6 +48,9 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
+          <Link isExternal aria-label="vk" href={siteConfig.links.vk}>
+            <VkIcon className="text-default-500" />
+          </Link>
           <Link
             isExternal
             aria-label="Telegramm"

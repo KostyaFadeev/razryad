@@ -45,7 +45,10 @@ export const siteConfig = {
   ],
   links: {
     about: "/",
-    telegram: "https://t.me/Nikitosa22",
+    // telegram: "https://t.me/Nikitosa22",
+    telegram: "https://t.me/razryad_tech",
+    vk: "https://vk.com/razryad_com",
+    mail_support: "nikos.work@mail.ru",
     github: "https://github.com/nextui-org/nextui",
     twitter: "https://twitter.com/getnextui",
     stocks: "stocks",

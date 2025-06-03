@@ -45,7 +45,7 @@ export default function HeroSection() {
           <Link
             isExternal
             className={buttonStyles({ variant: "bordered", radius: "full" })}
-            href={siteConfig.links.telegram}
+            href={`mailto:${siteConfig.links.mail_support}`}
           >
             <TelegramIcon size={20} />
             Задать вопрос
