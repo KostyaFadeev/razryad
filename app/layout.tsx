@@ -1,8 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import { Link } from "@nextui-org/link";
 import clsx from "clsx";
-import Head from "next/head"; // Импортируйте Head
+import Script from "next/script";
 
 import { Providers } from "./providers";
 
@@ -41,9 +40,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning lang="en">
       <head>
-        <Head>
-          <meta name="yandex-verification" content="b0087c71c1d44566" />
-        </Head>
+        <meta name="yandex-verification" content="b0087c71c1d44566" />
       </head>
       <body
         className={clsx(
@@ -51,6 +48,11 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
+        <Script
+          src="//code.tidio.co/hgy0czyum7e76umjkbdogt3qzfsuvdzi.js"
+          strategy="afterInteractive"
+        />
+
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
             <Navbar />
