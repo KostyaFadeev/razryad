@@ -98,5 +98,80 @@
       "bgClass": "bg-white/30",
       "borderClass": "border-t-1 border-zinc-100/50"
     }
+  },
+  {
+    "type": "footer",
+    "title": "Кабель USB Type-C угловой",
+    "subtitle": "Поддержка Thunderbolt 3/4",
+    "image": {
+      "src": "/img/products/KVUSB4CH31UG/KVUSB4CH31UG.jpg",
+      "alt": "Кабель USB Type-C",
+      "className": "object-contain"
+    },
+    "className": "col-span-12 sm:col-span-4 h-[300px]",
+    "isFooterBlurred": true,
+    "footer": {
+      "type": "features",
+      "features": [
+        "Сверхбыстрая зарядка",
+        "Прочная оплетка"
+      ],
+      "link": {
+        "href": "/product?id=KVUSB4CH31UG",
+        "label": "Подробнее"
+      },
+      "bgClass": "bg-white/30",
+      "borderClass": "border-t-1 border-zinc-100/50"
+    }
+  },
+  {
+    "type": "footer",
+    "title": "USB адаптер",
+    "subtitle": "Хаб 8 в 1",
+    "image": {
+      "src": "/img/products/KVHUB8V1/KVHUB8V1.jpg",
+      "alt": "Кабель USB Type-C",
+      "className": "object-contain"
+    },
+    "className": "col-span-12 sm:col-span-4 h-[300px]",
+    "isFooterBlurred": true,
+    "footer": {
+      "type": "features",
+      "features": [
+        "Сверхбыстрая зарядка",
+        "Прочная оплетка"
+      ],
+      "link": {
+        "href": "/product?id=KVHUB8V1",
+        "label": "Подробнее"
+      },
+      "bgClass": "bg-white/30",
+      "borderClass": "border-t-1 border-zinc-100/50"
+    }
+  },
+  {
+    "type": "footer",
+    "title": "USB адаптер",
+    "subtitle": "Хаб 7 в 1",
+    "image": {
+      "src": "/img/products/KVHUB7V1/KVHUB7V1.jpg",
+      "alt": "Кабель USB Type-C",
+      "className": "object-contain"
+    },
+    "className": "col-span-12 sm:col-span-4 h-[300px]",
+    "isFooterBlurred": true,
+    "footer": {
+      "type": "features",
+      "features": [
+        "Сверхбыстрая зарядка",
+        "Прочная оплетка"
+      ],
+      "link": {
+        "href": "/product?id=KVHUB7V1",
+        "label": "Подробнее"
+      },
+      "bgClass": "bg-white/30",
+      "borderClass": "border-t-1 border-zinc-100/50"
+    }
   }
 ]

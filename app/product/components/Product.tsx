@@ -85,36 +85,65 @@ const Product = () => {
               {/* Селектор размера и ссылки на магазины */}
               <div className="flex flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
                 {/* Селектор размера */}
-                <div className="w-full sm:w-1/2">
-                  <Select
-                    className="max-w-full"
-                    label="Размер"
-                    placeholder="Выберите размер"
-                    onChange={(e) =>
-                      setSelectedSize(product.sizes[Number(e.target.value)])
-                    }
-                  >
-                    {product.sizes.map((size, index) => (
-                      <SelectItem key={index}>{size?.name}</SelectItem>
-                    ))}
-                  </Select>
-                </div>
+                {product?.sizes.length > 0 && (
+                  <div className="w-full sm:w-1/2">
+                    <Select
+                      className="max-w-full"
+                      label="Размер"
+                      placeholder="Выберите размер"
+                      onChange={(e) =>
+                        setSelectedSize(product.sizes[Number(e.target.value)])
+                      }
+                    >
+                      {product.sizes.map((size, index) => (
+                        <SelectItem key={index}>{size?.name}</SelectItem>
+                      ))}
+                    </Select>
+                  </div>
+                )}
 
                 {/* Кнопки магазинов */}
-                <div className="flex flex-wrap gap-3 w-full sm:w-1/2">
-                  {product.storeLinks.map((store, index) => (
+                <div className="flex flex-wrap gap-3 w-full">
+                  {product?.sizes.length > 0 &&
+                    product.storeLinks.map((store, index) => (
+                      <Button
+                        key={index}
+                        color="primary"
+                        variant="ghost"
+                        target="_blank"
+                        as="a"
+                        href={selectedSize?.link}
+                        className="w-full sm:w-auto"
+                      >
+                        {store.name}
+                      </Button>
+                    ))}
+
+                  {!selectedSize?.link && product?.defaultOzonLink && (
                     <Button
-                      key={index}
                       color="primary"
                       variant="ghost"
                       target="_blank"
                       as="a"
-                      href={selectedSize?.link}
+                      href={product?.defaultOzonLink}
                       className="w-full sm:w-auto"
                     >
-                      {store.name}
+                      Купить на Ozon
                     </Button>
-                  ))}
+                  )}
+
+                  {!selectedSize?.link && product?.defaultYaLink && (
+                    <Button
+                      color="secondary"
+                      variant="ghost"
+                      target="_blank"
+                      as="a"
+                      href={product?.defaultYaLink}
+                      className="w-full sm:w-auto"
+                    >
+                      Купить на Яндекс Маркете
+                    </Button>
+                  )}
                 </div>
               </div>
 
@@ -319,6 +348,8 @@ interface ProductType {
   }>;
   title: string;
   imageUrl: string;
+  defaultOzonLink: string;
+  defaultYaLink: string;
   price: number;
   sizes: Array<{
     name: string;
