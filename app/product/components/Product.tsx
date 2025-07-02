@@ -1,6 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -24,35 +23,34 @@ import {
 } from "@nextui-org/react";
 import Link from "next/link";
 import { button as buttonStyles } from "@nextui-org/theme";
+import { ProductType } from "@/types";
 
-const Product = () => {
-  const searchParams = useSearchParams();
-  const productId = searchParams.get("id");
-  const [product, setProduct] = useState<ProductType>({} as ProductType);
-  const [loading, setLoading] = useState(true);
+const Product = ({ product }: { product: ProductType }) => {
+  // const [product, setProduct] = useState<ProductType>({} as ProductType);
+  const [loading, setLoading] = useState(false);
   const [selectedSize, setSelectedSize] = useState(
     {} as ProductType["sizes"][0],
   );
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        if (productId) {
-          const response = await fetch(`/api/product/${productId}`);
-          if (!response.ok) return;
-
-          const data = await response.json();
-          setProduct(data);
-        }
-      } catch (error) {
-        console.error(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchProduct();
-  }, [productId]);
+  // useEffect(() => {
+  //   const fetchProduct = async () => {
+  //     try {
+  //       if (productId) {
+  //         const response = await fetch(`/api/product/${productId}`);
+  //         if (!response.ok) return;
+  //
+  //         const data = await response.json();
+  //         setProduct(data);
+  //       }
+  //     } catch (error) {
+  //       console.error(error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+  //
+  //   fetchProduct();
+  // }, [productId]);
 
   return (
     <div className={"w-full "}>
@@ -319,7 +317,7 @@ const Product = () => {
                                 radius: "full",
                                 variant: "shadow",
                               })}
-                              href={`/product?id=${card.id}`}
+                              href={`/product/${card.id}`}
                             >
                               Подробнее
                             </Link>
@@ -340,41 +338,3 @@ const Product = () => {
 };
 
 export default Product;
-
-interface ProductType {
-  breadcrumbs: Array<{
-    title: string;
-    link: string;
-  }>;
-  title: string;
-  imageUrl: string;
-  defaultOzonLink: string;
-  defaultYaLink: string;
-  price: number;
-  sizes: Array<{
-    name: string;
-    link: string;
-  }>;
-  storeLinks: Array<{
-    name: string;
-    link: string;
-  }>;
-  details: Array<{
-    title: string;
-    description: string;
-  }>;
-  videoUrl?: string; // Поле помечено как необязательное (вдруг видео отсутствует)
-  videoDescription?: string; // Так же необязательное
-  videoFeatures?: string[]; // Массив строк (необязательное для гибкости)
-  articleLink: string;
-  features: string[];
-  imageUrls: string[];
-  moreCards: Array<{
-    id: string;
-    title: string;
-    subTitle: string;
-    link: string;
-    image: string;
-    features: string[];
-  }>;
-}

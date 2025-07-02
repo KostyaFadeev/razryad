@@ -20,10 +20,10 @@ export const siteConfig = {
       label: "Обратная связь",
       href: "/support",
     },
-    {
-      label: "Полезные статьи",
-      href: "/doc",
-    },
+    // {
+    //   label: "Полезные статьи",
+    //   href: "/doc",
+    // },
     {
       label: "О нас",
       href: "/about",

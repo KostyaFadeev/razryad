@@ -1,7 +1,5 @@
 "use client";
 
-import { Info, Zap } from "lucide-react";
-
 export const AboutBlock = () => {
   return (
     <div className="bg-white shadow-xl rounded-2xl px-6 py-8 flex flex-col md:flex-row gap-6 items-center justify-between max-w-5xl mx-auto">

@@ -2,81 +2,25 @@
 
 import { Card, CardHeader, CardFooter, Image, Button } from "@nextui-org/react";
 import { Link } from "@nextui-org/link";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { button as buttonStyles } from "@nextui-org/theme";
 
-/**
- * Компонент Usb4Section загружает и отображает список карточек.
- *
- * При монтировании компонента отправляется запрос на сервер для
- * получения данных карточек. В процессе загрузки отображается
- * сообщение "Загрузка...". Если данные отсутствуют, отображается
- * сообщение "Нет данных для отображения". В случае успешного
- * получения данных, карточки выводятся на экран.
- *
- * @return {JSX.Element} Возвращает JSX-элемент секции с карточками,
- * либо сообщения об отсутствии данных или процессе загрузки.
- */
+import cards from "@/data/preview-cards.json";
 
-export default function Usb4Section() {
-  const [cards, setCards] = useState<CardType[]>({} as CardType[]);
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    const fetchCards = async () => {
-      setLoading(true);
-      try {
-        const response = await fetch("/api/hero/preview-cards");
-        if (!response.ok) {
-          console.error(response);
-        }
-
-        const data = await response.json();
-        setCards(data);
-      } catch (error) {
-        console.error("Ошибка при загрузке карточек:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCards();
-  }, []);
-
-  if (loading) {
-    return <div>Загрузка...</div>;
-  }
-
-  if (!cards || cards?.length === 0) {
-    return <div>Нет данных для отображения.</div>;
-  }
-
-  return (
-    <section>
-      <div className="flex flex-wrap gap-4">
-        {cards?.length > 0 &&
-          cards?.map((card: CardType, index: number) => (
-            <DynamicCard key={index} card={card} />
-          ))}
-      </div>
-    </section>
-  );
-}
-
-type CardType = {
+export type CardType = {
   className?: string;
   isFooterBlurred?: boolean;
   subtitle?: string;
   title: string;
-  titleColor?: string;
-  titleSize?: string;
+  titleColor?: string; // Например "white", "red-500" и т.п.
+  titleSize?: string; // Например "text-lg", "text-xl"
   image: {
     src: string;
     alt: string;
     className?: string;
   };
   footer?: {
-    type: "features" | "appCard";
+    type: string;
     bgClass?: string;
     borderClass?: string;
     features?: string[];
@@ -100,7 +44,26 @@ type CardType = {
   };
 };
 
+export default function Usb4Section() {
+  if (!cards || cards.length === 0) {
+    return <div>Нет данных для отображения.</div>;
+  }
+
+  return (
+    <section>
+      <div className="flex flex-wrap gap-4">
+        {cards.map((card: CardType, index: number) => (
+          <DynamicCard key={index} card={card} />
+        ))}
+      </div>
+    </section>
+  );
+}
+
 export function DynamicCard({ card }: { card: CardType }) {
+  // Для динамического цвета заголовка лучше применять style, так как tailwind не парсит шаблоны классов
+  const titleStyle = card.titleColor ? { color: card.titleColor } : undefined;
+
   return (
     <Card
       isFooterBlurred={card.isFooterBlurred}
@@ -114,9 +77,8 @@ export function DynamicCard({ card }: { card: CardType }) {
           </p>
         )}
         <h4
-          className={`${
-            card.titleSize || "text-lg"
-          } font-semibold text-${card.titleColor || "white"}`}
+          className={card.titleSize || "text-lg font-semibold"}
+          style={titleStyle}
         >
           {card.title}
         </h4>
