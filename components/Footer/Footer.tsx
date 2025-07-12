@@ -43,6 +43,10 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+          <p className="text-start text-base font-same-bold">
+            Сайт не собирает и не обрабатывает персональные данные
+            пользователей.
+          </p>
         </div>
       </Container>
     </footer>

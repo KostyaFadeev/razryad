@@ -1,7 +1,6 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import clsx from "clsx";
-import Script from "next/script";
 
 import { Providers } from "./providers";
 
@@ -48,11 +47,6 @@ export default function RootLayout({
           fontSans.variable,
         )}
       >
-        <Script
-          src="//code.tidio.co/hgy0czyum7e76umjkbdogt3qzfsuvdzi.js"
-          strategy="afterInteractive"
-        />
-
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col h-screen">
             <Navbar />
