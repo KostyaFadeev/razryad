@@ -38,7 +38,7 @@ export default function HeroSection() {
               radius: "full",
               variant: "shadow",
             })}
-            href={siteConfig.links.stocks}
+            href={siteConfig.links.discounts}
           >
             Получить подарок
           </Link>

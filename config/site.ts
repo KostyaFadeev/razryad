@@ -9,12 +9,12 @@ export const siteConfig = {
     "Мы стремимся удовлетворить потребности каждого клиента, предлагая доступные цены и отличное качество.",
   navItems: [
     {
-      label: "Акции",
-      href: "/stocks",
-    },
-    {
       label: "Гарантия",
       href: "/warranty",
+    },
+    {
+      label: "Акции",
+      href: "/discounts",
     },
     {
       label: "Обратная связь",
@@ -51,7 +51,7 @@ export const siteConfig = {
     mail_support: "nikos.work@mail.ru",
     github: "https://github.com/nextui-org/nextui",
     twitter: "https://twitter.com/getnextui",
-    stocks: "stocks",
+    discounts: "discounts",
     discord: "https://discord.gg/9b6yyZKmH4",
     sponsor: "https://patreon.com/jrgarciadev",
   },
